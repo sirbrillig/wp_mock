@@ -33,10 +33,12 @@ class Action extends Hook {
 
 				$processors = $processors[ $arg ];
 			}
-			
+
 			$offset = $this->safe_offset( $args[ $arg_num - 1 ] );
 			$reactor = isset( $processors[ $offset ] ) ? $processors[ $offset ] : array_shift( $processors );
-			$reactor->react();
+			if ( isset( $reactor ) ) {
+				$reactor->react();
+			}
 		}
 	}
 
