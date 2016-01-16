@@ -327,9 +327,10 @@ class WP_Mock {
 	 *
 	 * @param string $function_name
 	 * @param array  $arguments
+	 * @return Mockery\Mock
 	 */
 	public static function wpFunction( $function_name, $arguments = array() ) {
-		self::$function_manager->register( $function_name, $arguments );
+		return self::$function_manager->register( $function_name, $arguments );
 	}
 
 	/**
