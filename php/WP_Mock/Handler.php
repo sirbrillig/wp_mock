@@ -42,6 +42,7 @@ class Handler {
 
 			return call_user_func_array( $callback, $args );
 		}
+		throw new \Exception( 'Call to undefined function ' . $function_name . '()' );
 	}
 
 	/**
